@@ -1,0 +1,24 @@
+<h1>Form</h1>
+<form class="forms" [formGroup]="form">
+  <!-- Name text input -->
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Name" class="form-control" formControlName="name">
+  </mat-form-field>
+  <!-- Password text input -->
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Password" class="form-control" id="password" name="password" formControlName="password">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="State" aria-label="State" [matAutocomplete]="auto" formControlName="stateCtrl">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let state of filteredStates | async" [value]="state.name">
+        <img style="vertical-align:middle;" aria-hidden src="{{state.flag}}" height="25" />
+        <span>{{ state.name }}</span> |
+        <small>Population: {{state.population}}</small>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <div class="mat-form-field button-field">
+    <button mat-raised-button color="primary">Primary</button>
+  </div>
+</form>
