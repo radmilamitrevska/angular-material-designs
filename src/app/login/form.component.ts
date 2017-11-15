@@ -14,7 +14,8 @@ import 'rxjs/add/operator/map';
 export class FormComponent  {
     form: FormGroup;
     filteredStates: Observable<any[]>;
-
+    date = new Date();
+    number = 0.25;
     states: any[] = [
         {
             name: 'Arkansas',

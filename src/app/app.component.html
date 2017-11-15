@@ -2,7 +2,15 @@
 <div class="main-container">
   <div class="centered-container">
     <!-- Include login component -->
-    <app-form class="login-page"></app-form>
+    <div class="login-page">
+      <h1>Angular Examples </h1>
+      <nav>
+        <a routerLink="/form" routerLinkActive="active">Form</a>
+        <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
+        <a routerLink="/internationalization" routerLinkActive="active">Internationalization</a>
+      </nav>
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>
 
